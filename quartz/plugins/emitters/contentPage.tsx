@@ -15,6 +15,9 @@ import { Node } from "unist"
 import { StaticResources } from "../../util/resources"
 import { QuartzPluginData } from "../vfile"
 
+import { SimpleSlug } from "../../util/path"
+import { RecentNotes } from "../../components" 
+
 async function processContent(
   ctx: BuildCtx,
   tree: Node,
@@ -49,8 +52,21 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
   const opts: FullPageLayout = {
     ...sharedPageComponents,
     ...defaultContentPageLayout,
-    pageBody: Content(),
-    ...userOpts,
+    pageBody: (props) => {
+      if (props.fileData.slug === "index") {
+        // Show RecentNotes on the home page
+        return RecentNotes({
+          title: "Recent Posts",
+          limit: 10,
+          showTags: true,
+          linkToMore: "recent" as SimpleSlug,
+        })(props)
+      } else {
+        // Show normal content elsewhere
+        return Content()(props)
+      }
+    },
+      ...userOpts,
   }
 
   const { head: Head, header, beforeBody, pageBody, afterBody, left, right, footer: Footer } = opts

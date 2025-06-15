@@ -39,15 +39,19 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer(),
   ],
+
   right: [
     Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.RecentNotes({
-      title: "Recent Notes",
-      limit: 5,
-      showTags: true,
+    Component.ConditionalRender({
+      component: Component.RecentNotes({
+        title: "Recent Notes",
+        limit: 5,
+        showTags: true,
+      }),
+      // Only show RecentNotes on non-index pages
+      condition: (page) => page.fileData.slug !== "index",
     }),
-
     Component.Backlinks(),
   ],
 }
