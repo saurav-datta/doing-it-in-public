@@ -50,7 +50,7 @@ async function processContent(
 
 const HomePageRecentNotes = (props: QuartzComponentProps) =>
   RecentNotes({
-    title: "Recent Posts",
+    title: "",
     limit: 10,
     showTags: true,
     linkToMore: "recent" as SimpleSlug,

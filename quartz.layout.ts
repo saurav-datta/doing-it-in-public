@@ -24,15 +24,16 @@ const GraphForSidebar = [
   }),
 ]
 // components for pages that display a single page (e.g. a single note)
+// pageBody is the main content of the page. See contentPage.tsx for more details.
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
     Component.ConditionalRender({
       component: Component.Breadcrumbs(),
       condition: (page) => page.fileData.slug !== "index",
     }),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-    Component.TagList(),
+    // Component.ArticleTitle(),
+    // Component.ContentMeta(),
+    // Component.TagList(),
   ],
   left: [
     Component.PageTitle(),
