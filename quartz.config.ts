@@ -10,6 +10,7 @@ const config: QuartzConfig = {
   configuration: {
     pageTitle: "sauravs notes",
     pageTitleSuffix: "",
+    showDates: false,
     enableSPA: true,
     enablePopovers: true,
     analytics: {

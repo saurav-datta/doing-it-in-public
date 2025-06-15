@@ -57,9 +57,9 @@ export default ((userOpts?: Partial<Options> & { showPreview?: boolean }) => {
                     )}
                   </div>
                   {page.dates && (
-                    <p class="meta">
-                      <Date date={getDate(cfg, page)!} locale={cfg.locale} />
-                    </p>
+                    <div class="meta">
+                      <Date date={getDate(cfg, page)!} locale={cfg.locale} showDates={cfg.showDates} />
+                    </div>
                   )}
                   {opts.showTags && (
                     <ul class="tags">

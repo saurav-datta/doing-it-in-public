@@ -5,6 +5,7 @@ import { QuartzPluginData } from "../plugins/vfile"
 interface Props {
   date: Date
   locale?: ValidLocale
+  showDates?: boolean
 }
 
 export type ValidDateType = keyof Required<QuartzPluginData>["dates"]
@@ -26,6 +27,9 @@ export function formatDate(d: Date, locale: ValidLocale = "en-US"): string {
   })
 }
 
-export function Date({ date, locale }: Props) {
+export function Date({ date, locale, showDates = true }: Props) {
+  if (!showDates) {
+    return null
+  }
   return <time datetime={date.toISOString()}>{formatDate(date, locale)}</time>
 }
