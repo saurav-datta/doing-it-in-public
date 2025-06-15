@@ -25,7 +25,7 @@ const defaultOptions = (cfg: GlobalConfiguration): Options => ({
   sort: byDateAndAlphabetical(cfg),
 })
 
-export default ((userOpts?: Partial<Options>) => {
+export default ((userOpts?: Partial<Options> & { showPreview?: boolean }) => {
   const RecentNotes: QuartzComponent = ({
     allFiles,
     fileData,
@@ -52,6 +52,9 @@ export default ((userOpts?: Partial<Options>) => {
                         {title}
                       </a>
                     </h3>
+                    {userOpts?.showPreview && page.description && (
+                      <p class="recent-note-preview">{page.description}</p>
+                    )}
                   </div>
                   {page.dates && (
                     <p class="meta">

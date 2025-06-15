@@ -48,6 +48,16 @@ async function processContent(
   })
 }
 
+const HomePageRecentNotes = (props: QuartzComponentProps) =>
+  RecentNotes({
+    title: "Recent Posts",
+    limit: 10,
+    showTags: true,
+    linkToMore: "recent" as SimpleSlug,
+    showPreview: true,
+  })(props)
+
+
 export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOpts) => {
   const opts: FullPageLayout = {
     ...sharedPageComponents,
@@ -55,12 +65,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
     pageBody: (props) => {
       if (props.fileData.slug === "index") {
         // Show RecentNotes on the home page
-        return RecentNotes({
-          title: "Recent Posts",
-          limit: 10,
-          showTags: true,
-          linkToMore: "recent" as SimpleSlug,
-        })(props)
+          return HomePageRecentNotes(props)
       } else {
         // Show normal content elsewhere
         return Content()(props)

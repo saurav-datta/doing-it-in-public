@@ -13,6 +13,16 @@ export const sharedPageComponents: SharedLayout = {
   }),
 }
 
+const GraphForSidebar = [
+  Component.ConditionalRender({
+    component: Component.Graph({ localGraph: { depth: -1 } }),
+    condition: (page) => page.fileData.slug === "index",
+  }),
+  Component.ConditionalRender({
+    component: Component.Graph(),
+    condition: (page) => page.fileData.slug !== "index",
+  }),
+]
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
@@ -41,7 +51,7 @@ export const defaultContentPageLayout: PageLayout = {
   ],
 
   right: [
-    Component.Graph(),
+    ...GraphForSidebar,
     Component.DesktopOnly(Component.TableOfContents()),
     Component.ConditionalRender({
       component: Component.RecentNotes({
