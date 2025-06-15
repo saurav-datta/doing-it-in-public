@@ -11,8 +11,17 @@
 
     & > li {
       margin: 1rem 0;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--lightgray);
+      
+      &:last-child {
+        border-bottom: none;
+      }
+
       .section > .desc > h3 > a {
         background-color: transparent;
+        font-weight: 500;
+        letter-spacing: -0.011em;
       }
 
       .section > .meta {
