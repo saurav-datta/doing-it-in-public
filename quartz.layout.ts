@@ -59,6 +59,8 @@ export const defaultContentPageLayout: PageLayout = {
         title: "Recent Notes",
         limit: 5,
         showTags: true,
+        // Dont show index page
+        filter: (page) => page.slug !== "index",
       }),
       // Only show RecentNotes on non-index pages
       condition: (page) => page.fileData.slug !== "index",

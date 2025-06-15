@@ -55,6 +55,8 @@ const HomePageRecentNotes = (props: QuartzComponentProps) =>
     showTags: true,
     linkToMore: "recent" as SimpleSlug,
     showPreview: true,
+    // Dont show index page
+    filter: (page) => page.slug !== "index",
   })(props)
 
 
@@ -63,6 +65,7 @@ export const ContentPage: QuartzEmitterPlugin<Partial<FullPageLayout>> = (userOp
     ...sharedPageComponents,
     ...defaultContentPageLayout,
     pageBody: (props) => {
+      // Dont show index page
       if (props.fileData.slug === "index") {
         // Show RecentNotes on the home page
           return HomePageRecentNotes(props)
