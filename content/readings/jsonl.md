@@ -32,7 +32,8 @@ Each line is a valid JSON
 [[zcode/jsonl_demo.py]]
 
 # Example 4 - OpenAI format
-As shown in https://dev.to/es404020/understanding-the-openai-jsonl-format-organising-the-records-24mc
+As shown in <small> https://dev.to/es404020/understanding-the-openai-jsonl-format-organising-the-records-24mc </small>
+
 
 ```python
  openai_format = {
