@@ -25,7 +25,7 @@ tags:
 | ALEX      | ⚠️ (C++ only)             |
 | LISA      | ⚠️ (C++/academic)         |
 # LIDER
-https://arxiv.org/abs/2205.00970
+<small>https://arxiv.org/abs/2205.00970</small>
 - most of the existing learned indexes are designed for low dimensional data, which are not suitable for dense passage retrieval with high-dimensional dense embeddings
 - includes 
 	- an adapted recursive model index (RMI) and 
