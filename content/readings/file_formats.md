@@ -14,6 +14,13 @@ description: Useful file formats
 - [LIDER](#lider)
 - [PGM‑Index (via PyGM)](#pgm%E2%80%91index-via-pygm)
 - [RMI (Recursive Model Index)](#rmi-recursive-model-index)
+- [Parquet + Arrow + External Index](#parquet--arrow--external-index)
+- [WebDataset (TAR + Index)](#webdataset-tar--index)
+- [Indexed JSONL / FASTER JSONL](#indexed-jsonl--faster-jsonl)
+- [LMDB / RocksDB / LevelDB](#lmdb--rocksdb--leveldb)
+- [Delta Lake / Apache Iceberg / Apache Hudi](#delta-lake--apache-iceberg--apache-hudi)
+- [Petastorm (for Spark → PyTorch)](#petastorm-for-spark-%E2%86%92-pytorch)
+- [Recommendation by Use Case](#recommendation-by-use-case)
 - [References](#references)
 
 # Overview
@@ -94,6 +101,103 @@ def rmi_lookup(x):
 ```
 
 
+# Parquet + Arrow + External Index
+
+- **Description**: Compressed columnar format with schema and fast filtering.
+    
+- **Indexing**: Partitioned (e.g. by time/shard/user), filter pushdown, row group metadata.
+    
+- **Used by**: Meta (via Presto, Velox), Hugging Face Datasets.
+    
+- **Pros**: Efficient I/O, column projection, multi-threaded.
+    
+- **Cons**: Slower random row-level access unless partitioned/indexed.
+    
+
+---
+
+# WebDataset (TAR + Index)
+
+- **Description**: .tar archive of samples; each sample can have `.txt`, `.json`, `.cls`, etc.
+    
+- **Indexing**: Pre-generated index files (e.g. `.idx` with byte offsets or keys).
+    
+- **Used by**: LAION, OpenCLIP, EleutherAI.
+    
+- **Pros**: Streamable, HTTP/S3 friendly, works with PyTorch.
+    
+- **Cons**: Needs preprocessing to build archives and indexes.
+    
+
+---
+
+# Indexed JSONL / FASTER JSONL
+
+- **Description**: JSONL with separate offset index (e.g., `.npy`, `.json`, RocksDB).
+    
+- **Used by**: MosaicML, internal Meta/Anthropic preprocessing tools.
+    
+- **Pros**: Random access with simple tooling.
+    
+- **Cons**: Manual index generation, JSON overhead.
+    
+
+---
+
+# LMDB / RocksDB / LevelDB
+
+- **Description**: Key–value stores backed by memory-mapped files.
+    
+- **Indexing**: Built-in B-tree or LSM tree.
+    
+- **Used by**: OpenAI (Whisper training), Meta (feature storage), DeepMind.
+    
+- **Pros**: Fast random access, ideal for retrieval-heavy workloads.
+    
+- **Cons**: Less friendly for distributed training unless chunked carefully.
+    
+
+---
+
+# Delta Lake / Apache Iceberg / Apache Hudi
+
+- **Description**: Data lake formats with transaction logs, versioning, and indexing.
+    
+- **Indexing**: Partitioning + manifest files + column stats.
+    
+- **Used by**: Databricks, Meta’s Hydra pipeline, enterprise ML workflows.
+    
+- **Pros**: Scalable, supports schema evolution, versioned data.
+    
+- **Cons**: Heavyweight for non-enterprise use; Spark or Trino often needed.
+    
+
+---
+
+# Petastorm (for Spark → PyTorch)
+
+- **Description**: Parquet with additional metadata for PyTorch training.
+    
+- **Indexing**: Shard + row group + partition-based.
+    
+- **Used by**: Uber, Meta, Netflix.
+    
+- **Pros**: Integrates with Spark + PyTorch DataLoader.
+    
+- **Cons**: Tied to PyArrow and Spark stack.
+    
+
+---
+
+# Recommendation by Use Case
+
+|Use Case|Recommended Format|
+|---|---|
+|Pretraining (scale: 100B+ tokens)|Parquet + Arrow + partitioned index|
+|Fine-tuning (instruction pairs)|Indexed JSONL / WebDataset|
+|Retrieval-heavy (QA, RLHF)|LMDB / RocksDB|
+|Multimodal (text+image/audio)|WebDataset or Arrow bundles|
+|Cloud data lake (versioned)||
 # References
 -  PGM <small>https://pgm.di.unipi.it/</small>
 - LIDER <small>https://arxiv.org/abs/2205.00970</small>
