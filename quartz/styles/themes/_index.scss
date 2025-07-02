@@ -558,6 +558,8 @@ body {
   text-rendering: optimizeLegibility;
   user-select: none;
   width: 100%;
+  user-select: text;
+  -webkit-user-select: text;
 }
 /* START DARK */
 :root[saved-theme="dark"],
@@ -1656,8 +1658,8 @@ body {
     hyphens: none;
   }
   /* override user-select */
-  user-select: text;
-  -webkit-user-select: text;
+  // user-select: text;
+  // -webkit-user-select: text;
 }
 :root[saved-theme="light"] {
   button.darkmode {
@@ -1672,8 +1674,6 @@ body {
   }
 }
 /* FONT OVERRIDES */
-:root:root:root {
-}
 /* START CANVAS GRAPH WORKAROUND */
 /* START LIGHT GRAPH */
 :root:root[saved-theme="light"] {
