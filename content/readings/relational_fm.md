@@ -1,9 +1,10 @@
 ---
-title: relational foundation models
+title: relational fms
 draft: false
 tags:
-  - foundation-model
   - relational-fm
+  - fms
+  - foundation-model
 description: Discusses relational foundation models
 ---
 
