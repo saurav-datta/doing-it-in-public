@@ -8,15 +8,14 @@ description: How does Glean process enterprise data
 ---
 <small><i><a href="https://www.etymonline.com/word/glean">glean: to gather by acquisition, scrape together</a></i></small>
 
-Glean's "Work AI Platform" is built around a "System of Context," which integrates 
-- unified index
-- enterprise knowledge graph, and personal graph 
+Glean's "Work AI Platform" has the components:
+- [[1-glean-unified-index |unified index]] - a “traditional” index generated over crawled content
+- [[2-glean-knowledge-graph|knowledge graph]] - relations built over crawled content
+- [[3-glean-personal-graph |personal graph]] - a layer to inject/update peronalization
+
 
 <img src="https://cdn.prod.website-files.com/613513981b0efaf850830620/685e5b92f54a3afd4081d743_personal%20graph.webp"><small>source: <i>https://www.glean.com/blog/knowledge-graph-agentic-engine</i></small>
 
-- [[1-glean-unified-index]]
-- [[2-glean-knowledge-graph]]
-- [[3-glean-personal-graph]]
 
 # Reference
 
