@@ -1,5 +1,5 @@
 ---
-title: search glean
+title: Glean enterprise search
 draft: false
 tags:
   - glean
