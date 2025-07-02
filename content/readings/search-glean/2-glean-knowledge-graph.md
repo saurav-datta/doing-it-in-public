@@ -16,3 +16,4 @@ KGs address LLM shortcomings.
     For tasks like assessing "How is Project X doing against its OKRs?", LLMs are not "well-suited to surfacing those signals in the first place." Knowledge graphs map "code artifacts... to specific projects" and "organizational objectives."
 
 
+<img src="https://cdn.prod.website-files.com/613513981b0efaf850830620/685e5a2dc56f10d0511d4e27_table.webp"><small>source: <i>https://www.glean.com/blog/knowledge-graph-agentic-engine</i></small>
