@@ -8,7 +8,7 @@ tags:
 description: How does Glean process enterprise data
 ---
 
-# Need of a unified index when we have  federated search or MCP through LLM agents?
+# Need of a unified index when we have  agent/tool driven federated search ?
 Yes! Indexed search has multiple advantages:
 
 - **Speed and Performance**<br>
