@@ -3,6 +3,7 @@ title: search-news
 draft: false
 tags:
   - search
+  - search-news
 description: Search news
 ---
 **How Generative Engine Optimization (GEO) Rewrites the Rules of Search**
