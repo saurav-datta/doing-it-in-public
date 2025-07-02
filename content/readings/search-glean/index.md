@@ -6,9 +6,7 @@ tags:
   - search
 description: How does Glean process enterprise data
 ---
-
-> [!info]- <small> glean - to gather by acquisition, scrape together </small>
-> <small> per [etymonline](https://www.etymonline.com/word/glean) </small>
+<small><i><a href="https://www.etymonline.com/word/glean">glean: to gather by acquisition, scrape together</a></i></small>
 
 Glean's "Work AI Platform" is built around a "System of Context," which integrates 
 - unified index
