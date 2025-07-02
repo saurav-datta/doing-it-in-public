@@ -22,5 +22,6 @@ https://a16z.com/geo-over-seo/
 
 - **Tools for GEO**
 
-<img src="https://d1lamhf6l6yk6d.cloudfront.net/uploads/2025/05/250520-RIP-to-SEO-Market-Map-r14.png"><small>source: <i>https://a16z.com/geo-over-seo</i></small>
+<img src="https://d1lamhf6l6yk6d.cloudfront.net/uploads/2025/05/250520-RIP-to-SEO-Market-Map-r14.png" style="width:50%; height:auto;">
+<small>source: <i>https://a16z.com/geo-over-seo</i></small>
 
