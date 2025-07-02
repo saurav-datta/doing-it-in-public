@@ -1,5 +1,5 @@
 ---
-title: file_formats
+title: file formats
 draft: false
 tags:
   - file_format
@@ -15,7 +15,7 @@ description: Useful file formats
 - [PGM‑Index (via PyGM)](#pgm%E2%80%91index-via-pygm)
 - [RMI (Recursive Model Index)](#rmi-recursive-model-index)
 - [Parquet + Arrow + External Index](#parquet--arrow--external-index)
-- [WebDataset (TAR + Index)](#webdataset-tar--index)
+- [WebDataset (TAR + Index)](#webdataset-tar--index)                               
 - [Indexed JSONL / FASTER JSONL](#indexed-jsonl--faster-jsonl)
 - [LMDB / RocksDB / LevelDB](#lmdb--rocksdb--leveldb)
 - [Delta Lake / Apache Iceberg / Apache Hudi](#delta-lake--apache-iceberg--apache-hudi)

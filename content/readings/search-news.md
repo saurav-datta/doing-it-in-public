@@ -1,5 +1,5 @@
 ---
-title: search-news
+title: search news
 draft: false
 tags:
   - search
