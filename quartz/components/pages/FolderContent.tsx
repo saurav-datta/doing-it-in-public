@@ -113,9 +113,11 @@ export default ((opts?: Partial<FolderContentOptions>) => {
               })}
             </p>
           )}
-          <div>
-            <PageList {...listProps} />
-          </div>
+          {options.showSubfolders && (
+            <div>
+              <PageList {...listProps} />
+            </div>
+          )}
         </div>
       </div>
     )

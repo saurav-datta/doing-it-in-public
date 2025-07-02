@@ -79,7 +79,12 @@ const config: QuartzConfig = {
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
-      Plugin.FolderPage(),
+      Plugin.FolderPage({
+        pageBody: require("./quartz/components/pages/FolderContent").default({
+          showFolderCount: false,   // already set by you
+          showSubfolders: false,    // this disables the listing of child notes and tags
+        }),
+      }),
       Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,
