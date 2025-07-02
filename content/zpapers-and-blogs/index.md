@@ -6,7 +6,6 @@ tags:
 description: Papers and blogs
 ---
 
-- [LLM arch](#llm-arch)
 - [Embeddings](#embeddings)
 - [RAG](#rag)
 - [Database](#database)
