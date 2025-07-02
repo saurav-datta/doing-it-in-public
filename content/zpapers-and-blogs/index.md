@@ -1,5 +1,5 @@
 ---
-title: papers-and-blogs
+title: 
 draft: false
 tags:
   - papers-and-blogs
