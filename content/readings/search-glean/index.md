@@ -8,7 +8,10 @@ description: How does Glean process enterprise data
 ---
 
 
-Glean's "Work AI Platform" is built around a "System of Context," which integrates the unified index, enterprise knowledge graph, and personal graph to power *advanced* AI applications like "Glean Assistant" and "Glean Agents."
+Glean's "Work AI Platform" is built around a "System of Context," which integrates 
+- unified index
+- enterprise knowledge graph
+- personal graph 
 
 <img src="https://cdn.prod.website-files.com/613513981b0efaf850830620/685e5b92f54a3afd4081d743_personal%20graph.webp"><small>source: <i>https://www.glean.com/blog/knowledge-graph-agentic-engine</i></small>
 
